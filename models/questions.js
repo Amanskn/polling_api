@@ -4,11 +4,10 @@ const questionSchema = new mongoose.Schema({
     title: String, 
     options: [
         { 
-            body: String, date: Date 
+           type:mongoose.Schema.Types.ObjectId,
+           ref:'option' 
         }
     ]
-},{
-    timestamps:true
 });
 
 const Question = mongoose.model('question',questionSchema);
